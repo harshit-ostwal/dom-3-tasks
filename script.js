@@ -1,5 +1,20 @@
 // DOM - 3 Tasks
 
+// Task 1: Greater than Average
+var task1Btn = document.querySelector("#task-1 #btn");
+var task1Result = document.querySelector("#task-1 #result");
+var values = [10, 20, 30, 40, 50];
+
+task1Btn.addEventListener("click", function () {
+  var sum = values.reduce((prev, curr) => prev + curr, 0) / values.length;
+
+  var greater = values.filter((value) => value > sum);
+
+  task1Result.innerHTML =
+    "Average: " + sum + "<br> Greater than Average: " + greater.join(", ");
+  task1Result.classList.add("win");
+});
+
 // Task 3: Rotate Div 360 Deg
 var task3Box = document.querySelector("#task-3 #box");
 var task3Count = document.querySelector("#task-3 #count");
